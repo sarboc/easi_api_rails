@@ -9,3 +9,7 @@
 5.times do |i|
   System.create(name: "System #{i + 1}", lcid: "#{i + 1}2345a")
 end
+
+5.times do |i|
+  AccessibilityRequest.create(name: "Request for System 1.#{i}", system: System.find(1))
+end

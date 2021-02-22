@@ -11,5 +11,6 @@ module Types
     end
 
     field :fetch_systems, resolver: Queries::FetchSystems
+    field :fetch_accessibility_requests, resolver: Queries::FetchAccessibilityRequests
   end
 end
