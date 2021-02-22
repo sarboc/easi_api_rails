@@ -36,3 +36,22 @@ bundle exec rails server
 ```
 
 You can visit the graphql playground at `http://localhost:3000/graphiql`
+
+Sample query:
+
+```
+query {
+  fetchAccessibilityRequests {
+    id
+    name
+    system {
+      name
+    }
+    tests {
+      date
+      score
+      testType
+    }
+  }
+}
+```
