@@ -8,5 +8,6 @@ module Types
     field :id, ID, null: false
     field :name, String, null: false
     field :system, Types::SystemType, null: false
+    field :tests, [Types::AccessibilityRequestTestType], null: false
   end
 end

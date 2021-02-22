@@ -13,3 +13,17 @@ end
 5.times do |i|
   AccessibilityRequest.create(name: "Request for System 1.#{i}", system: System.find(1))
 end
+
+5.times do |i|
+  if i % 2 == 0
+    test_type = :initial
+  else
+    test_type = :remediation
+  end
+  AccessibilityRequestTest.create(
+    date: Time.now, 
+    accessibility_request: AccessibilityRequest.find(1), 
+    test_type: test_type,
+    score: (i * 10)
+  )
+end

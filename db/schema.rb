@@ -10,10 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_22_062711) do
+ActiveRecord::Schema.define(version: 2021_02_22_064751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+# Could not dump table "accessibility_request_tests" because of following StandardError
+#   Unknown type 'accessibility_request_test_type' for column 'test_type'
 
   create_table "accessibility_requests", force: :cascade do |t|
     t.string "name"
@@ -30,5 +33,6 @@ ActiveRecord::Schema.define(version: 2021_02_22_062711) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "accessibility_request_tests", "accessibility_requests"
   add_foreign_key "accessibility_requests", "systems"
 end
